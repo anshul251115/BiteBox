@@ -3,107 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="Images/favicon/favicon-package/favicon.ico">
-    
-    <style>
-        .navigation {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; 
-            width: 100%;
-        }
-
-        nav{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgb(0, 0, 0);
-            padding: 15px 20px;
-        }
-
-        nav a:hover{
-            color: red;
-        }
-
-        nav li:last-child a{
-            background-color: red;
-            padding: 6px 12px;
-            border-radius: 5px;
-        }
-
-        nav li:last-child a:hover{
-            background-color: black;
-            color: red;
-        }
-
-        ul
-        {
-            display: flex;
-            list-style: none;
-            align-items: center;
-            justify-content: space-between;
-            margin-left: auto;
-            gap: 40px;
-        }
-
-        hr {
-            border: 0;
-            border-top: 3px solid #333; 
-            width: 100%;
-            margin: 0;
-            background-color: #1e1d1d;
-        }
-        
-        .temp{
-            color: red;
-            font-weight: bold;
-            border-bottom: 2px solid red;
-            padding-bottom: 4px;
-        }
-
-        img {
-            display: inline-block;
-            margin-right: 50px; 
-            width: 180px;
-        }
-
-        nav a
-        {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-        } 
-        table
-        {
-          margin: auto;
-            align-items: center;
-            margin-top: 25px;
-            /* border: 2px solid black; */
-            min-height: auto;
-            border-collapse: collapse;
-                  
-        }
-        th{
-            background-color: red;
-            color: white;
-                padding-left: 100px;
-            
-        }
-        td{
-                padding-left: 100px;
-        }
-
-        
-    </style>
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-<nav>
+    <header>
+        <div class="tempdiv">
+            <hr style="padding-top: 7px;">
+        </div>
+        <nav>
             <div class="navigation">
-                <img src="Images/bitelogo.png" alt="Bitebox Logo">
+                <img src="Images/biteboxlogo.png" alt="Bitebox Logo">
                 <ul>   
                     <li class="temp"><a href="./menu.html"><i class="fa-solid fa-bars"></i> Menu</a></li>
                     <li class="temp"><a href="./home.html"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -113,16 +25,77 @@
                 </ul>
             </div>
         </nav>
-
-        <table >
-          <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantatity</th>
-            <th>Total</th>
-            <th>Remove</th>
-          </tr>
-         
+        <div class="tempdiv">
+            <hr style="padding-bottom: 7px;">
+        </div>
+    </header>
+    <section class="three-step">
+        <div>
+            <h3>Cart</h3>
+            <hr>
+            <h3>Address</h3>
+            <hr>
+            <h3>Payment</h3>
+        </div>
+        <h3 id="secure"><i class="fa-solid fa-shield-heart"></i>100% Secure</h3>
+    </section>
+    <section class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th class="img-col">Item</th>
+                    <th class="price-col">Price</th>
+                    <th class="quantity-col">Quantity</th>
+                    <th class="total-col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="img-col">
+                        <img src="Images/pizza.jpg" alt="Pizza">
+                       <div class="item">
+                            <h2>Pizza</h2>
+                            <p>An oven-baked flatbread topped with a savory layer of tomato sauce, melted cheese, and assorted meats or vegetables. Originating in Italy, it is shared globally as the ultimate party and slice-and-go comfort meal.</p>
+                       </div>
+                    </td>
+                    <td class="price-col">₹120</td>
+                    <td class="quantity-col">
+                        <button>-</button>
+                        1
+                        <button>+</button>
+                    </td>
+                    <td class="total-col">₹120</td>
+                </tr>
+                <tr>
+                    <td class="img-col">
+                        <img src="Images/pasta.jpg" alt="Pasta">
+                        <div class="item">
+                            <h2>Pasta</h2>
+                            <p>An Italian staple made from wheat dough, shaped into diverse forms like spaghetti, penne, or macaroni, and boiled until tender. It serves as a versatile canvas for rich ragùs, creamy alfredos, or simple garlic and olive oil sauces.</p>
+                       </div>
+                    </td>
+                    <td class="price-col">₹100</td>
+                    <td class="quantity-col">
+                        <button>-</button>
+                        1
+                        <button>+</button>
+                    </td>
+                    <td class="total-col">₹100</td>
+                </tr>
+                <tr>
+                    <td class="last" colspan="1"><h2>Grand Total:</h2></td>
+                    <td class="last" colspan="1"><h2>₹220</h2></td>
+                    <td class="last" colspan="2"><button id="checkout">Checkout</button></td>  
+                </tr>
+            </tbody>    
         </table>
+    </section>    
+    <footer>
+        <ul>
+            <li class="foot">About us</li>
+            <li class="foot">Contact Us</li>
+            <li class="foot">@copyright 2026 Bitebox</li>
+        </ul> 
+    </footer>
 </body>
 </html>
